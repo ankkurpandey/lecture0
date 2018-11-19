@@ -1,0 +1,82 @@
+Cross sell products on tracking page (automatically from shopping cart catalog)
+
+
+idea is to sell my products to sellers
+
+approcah --
+
+
+506105  -- basic plan shipment
+
+10595  active plans 
+
+12078  --- shipments
+591306.00   --- courier charges
+
+
+if he switches to basic , he will save 1 ruppee minimum,
+he would have saved 12078 minimum
+
+
+
+moth wise breakup
+can save --  every month.
+
+
+
+
+782
+33725.00      
+2018-01-02 18:08:24
+496
+18002.00
+2018-02-02 16:12:23
+1857
+94612.00
+2018-03-03 18:03:06
+262
+13100.00
+2018-04-03 16:21:45
+810
+41087.00
+2017-10-11 10:29:48
+4442
+218673.00
+2017-11-06 13:45:13
+3429
+172107.00
+2017-12-04 16:57:58
+
+
+
+can implement a plan calculator. where he can calculate how much he can save by upgrading --- 
+
+
+
+
+
+
+SELECT awbs.applied_weight,awb_rates.shipping_rate_per_half_kg  FROM `awbs`
+join awb_rates 
+on awbs.awb_code=awb_rates.awb_code
+WHERE awbs.`company_id` = 33616
+
+
+
+
+SELECT count(awbs.awb_code),sum(awbs.charge_weight_amount) , awbs.assigned_date_time FROM `awbs`
+join awb_rates 
+on awbs.awb_code=awb_rates.awb_code
+WHERE awbs.`company_id` = 33616
+group by month(awbs.assigned_date_time)
+
+
+
+---
+
+
+
+also we can get a list of his top items which a seller is shiipin from shiprocket and can ask me to sell those on kraftly.
+
+
+
